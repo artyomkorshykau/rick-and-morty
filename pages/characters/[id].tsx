@@ -4,6 +4,7 @@ import {getLayout} from "@/components/Layout/layout";
 import {useCharacter} from "@/assets/hooks/useCharacter";
 import s from './characters.module.scss'
 
+
 function Character() {
 
   const character = useCharacter()
@@ -11,9 +12,7 @@ function Character() {
   return (
       <div className={s.characters}>
         <HeadMeta title={'Characters'}/>
-        {character && <CharacterCard id={character.id}
-                                     image={character.image}
-                                     name={character.name}/>
+        {character && <CharacterCard character={character}/>
         }
       </div>
   );
