@@ -2,7 +2,11 @@ import "@/styles/globals.css";
 import type {AppProps} from "next/app";
 import {NextPage} from "next";
 import {ReactElement, ReactNode, useState} from "react";
-import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
+import {
+  HydrationBoundary,
+  QueryClient,
+  QueryClientProvider
+} from '@tanstack/react-query'
 
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -20,7 +24,9 @@ export default function App({Component, pageProps}: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page)
   return getLayout(
       <QueryClientProvider client={queryClient}>
+        <HydrationBoundary state={pageProps.dehydratedState}>
           <Component {...pageProps}/>
+        </HydrationBoundary>
       </QueryClientProvider>
   )
 }
