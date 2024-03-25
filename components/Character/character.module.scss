@@ -1,0 +1,19 @@
+.card {
+  padding: 6px;
+  background: #e4d4e5;
+  width: max-content;
+  border-radius: 6px;
+
+  &:hover {
+    background: #3167d1;
+    transition: .5s;
+    cursor: pointer;
+  }
+
+  .name {
+    color: #2f273a;
+    text-align: center;
+    width: 312px;
+    padding-bottom: 20px;
+  }
+}
