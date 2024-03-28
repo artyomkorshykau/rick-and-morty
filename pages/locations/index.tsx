@@ -3,6 +3,8 @@ import {getLayout} from "@/components/Layout/layout";
 import {ResponseType} from "@/assets/types/response";
 import {LocationType} from "@/assets/types/location";
 import {dehydrate, QueryClient, useQuery} from "@tanstack/react-query";
+import {Card} from "@/components/card/card";
+import s from './locations.module.scss'
 
 
 const getLocations = () => {
@@ -37,15 +39,16 @@ function Locations() {
 
   return (
       <div>
-        <HeadMeta title={'Episode'}/>
-        {locations && locations.results.map(el => {
-              return (
-                  <div key={el.id}>
-                    {el.name}
-                  </div>
+        <HeadMeta title={'Location | Rick & Morty'}/>
+        <ol className={s.locationList}>
+          {locations && locations.results.map(el => (
+                  <li key={el.id}>
+                    <Card title={el.name}/>
+                  </li>
               )
-            }
-        )}
+          )}
+        </ol>
+
       </div>
   );
 }
