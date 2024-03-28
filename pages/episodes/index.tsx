@@ -3,6 +3,8 @@ import {getLayout} from "@/components/Layout/layout";
 import axios from "axios";
 import {EpisodeType} from "@/assets/types/episode";
 import {ResponseType} from "@/assets/types/response";
+import {Card} from "@/components/card/card";
+import s from './episode.module.scss'
 
 
 export const getServerSideProps = async () => {
@@ -30,15 +32,14 @@ function Episodes({episodes}: Props) {
 
   return (
       <div>
-        <HeadMeta title={'Episode'}/>
-        {episodes && episodes.map(el => {
-              return (
-                  <div key={el.id}>
-                    {el.name}
-                  </div>
-              )
-            }
-        )}
+        <HeadMeta title={'Episode | Rick & Morty'}/>
+        <ol className={s.episodeList}>
+          {episodes && episodes.map((el) =>
+              <li key={el.id}>
+                <Card title={el.name}/>
+              </li>
+          )}
+        </ol>
       </div>
   );
 }
