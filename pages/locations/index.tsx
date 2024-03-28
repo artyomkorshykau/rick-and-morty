@@ -1,10 +1,11 @@
 import HeadMeta from "@/components/HeadMeta/head";
-import {getLayout} from "@/components/Layout/layout";
 import {ResponseType} from "@/assets/types/response";
 import {LocationType} from "@/assets/types/location";
 import {dehydrate, QueryClient, useQuery} from "@tanstack/react-query";
-import {Card} from "@/components/card/card";
+import {Card} from "@/components/Card/card";
 import s from './locations.module.scss'
+import {getLayout} from "@/components/Layout/Base/base-layout";
+import {PageWrapper} from "@/components/PageWrapper/page-wrapper";
 
 
 const getLocations = () => {
@@ -38,18 +39,18 @@ function Locations() {
 
 
   return (
-      <div>
-        <HeadMeta title={'Location | Rick & Morty'}/>
-        <ol className={s.locationList}>
-          {locations && locations.results.map(el => (
-                  <li key={el.id}>
-                    <Card title={el.name}/>
-                  </li>
-              )
-          )}
-        </ol>
-
-      </div>
+      <PageWrapper title={'Locations | Rick & Morty'}>
+        <div>
+          <ol className={s.locationList}>
+            {locations && locations.results.map(el => (
+                    <li key={el.id}>
+                      <Card title={el.name}/>
+                    </li>
+                )
+            )}
+          </ol>
+        </div>
+      </PageWrapper>
   );
 }
 

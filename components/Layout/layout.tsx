@@ -10,7 +10,3 @@ export const Layout: NextPage<PropsWithChildren> = ({children}) => {
       </main>
   )
 }
-
-export const getLayout = (page: ReactElement) => {
-  return <Layout>{page}</Layout>
-}

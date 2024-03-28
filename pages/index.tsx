@@ -1,14 +1,10 @@
-import HeadMeta from "@/components/HeadMeta/head";
-import {getLayout} from "@/components/Layout/layout";
+import {getLayout} from "@/components/Layout/Base/base-layout";
+import {PageWrapper} from "@/components/PageWrapper/page-wrapper";
 
 
-function Home() {
-  return (
-      <>
-        <HeadMeta title={'Main'}/>
-      </>
-  );
-}
+const Home = () => (
+    <PageWrapper title={'Main'}/>
+);
 
 Home.getLayout = getLayout
 
