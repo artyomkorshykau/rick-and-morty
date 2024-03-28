@@ -1,3 +1,6 @@
+import {ReactNode} from "react";
+
+
 export type CharactersInfo = {
   count: number;
   pages: number;
@@ -14,18 +17,14 @@ export type CharactersLocation = {
   url: string;
 }
 
-export type CharacterStatus = {
-  status: "alive" | "dead" | "unknown";
-}
+export type CharacterStatus = "alive" | "dead" | "unknown";
 
-export type CharacterSex = {
-  gender: "female" | "male" | "genderless" | "unknown";
-}
+export type CharacterSex = "female" | "male" | "genderless" | "unknown";
 
 export type CharacterType = {
   id: number;
   name: string;
-  status: CharacterStatus
+  status: CharacterStatus;
   species: string;
   type: string;
   gender: CharacterSex
