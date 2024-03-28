@@ -10,7 +10,7 @@ type Props = {
 
 export const CharacterCard = ({character}: Props) => {
 
-  const {name, status, species, location, origin} = character
+  const {name, status, species, location} = character
 
   return (
       <div className={s.card}>

@@ -1,6 +1,3 @@
-import {ReactNode} from "react";
-
-
 export type CharactersInfo = {
   count: number;
   pages: number;
