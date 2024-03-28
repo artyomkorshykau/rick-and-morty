@@ -1,23 +1,24 @@
+import {Status} from "@/components/Status/status";
 import Image from "next/image";
-import s from './character.module.scss'
 import {CharacterType} from "@/assets/types/character";
-import {Status} from "../Status/status";
+import s from './character-bio.module.scss'
 
 
 type Props = {
   character: CharacterType
 }
 
-export const CharacterCard = ({character}: Props) => {
+export const CharacterBio = ({character}: Props) => {
 
-  const {name, status, species, location, origin} = character
+  const {status, name, image, location, species} = character
 
   return (
       <div className={s.card}>
-        <Image src={character.image}
-               alt={`Picture of ${character.name}`}
-               width={230}
-               height={220}/>
+
+        <Image src={image}
+               alt={`Picture of ${name}`}
+               width={550}
+               height={450}/>
 
         <div className={s.info}>
           <div className={s.section}>
@@ -39,4 +40,3 @@ export const CharacterCard = ({character}: Props) => {
       </div>
   )
 }
-

@@ -17,7 +17,7 @@ export type CharactersLocation = {
   url: string;
 }
 
-export type CharacterStatus = "alive" | "dead" | "unknown";
+export type CharacterStatus = "Alive" | "Dead" | "unknown";
 
 export type CharacterSex = "female" | "male" | "genderless" | "unknown";
 
