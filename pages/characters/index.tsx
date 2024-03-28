@@ -32,8 +32,8 @@ type Props = {
 function Characters({characters}: Props) {
 
   return (
-      <div className={s.characters}>
-        <HeadMeta title={'Characters'}/>
+      <div className={s.charactersPage}>
+        <HeadMeta title={'Characters | Rick & Morty'}/>
         {characters && characters.map(el => (
             <Link href={`/characters/${el.id}`} key={el.id}>
               <CharacterCard character={el}
