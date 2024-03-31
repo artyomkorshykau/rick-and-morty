@@ -5,9 +5,15 @@ import {EpisodeCard} from "@/components/EpisodeCard/episode-card";
 import s from './episode.module.scss'
 import {getLayout} from "@/components/Layout/Base/base-layout";
 import {PageWrapper} from "@/components/PageWrapper/page-wrapper";
+import {GetServerSideProps} from "next";
 
 
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async ({res}) => {
+
+
+  // Data cashing and revalidate data before 100sec
+  res.setHeader('Cash-control', 'public, s-maxage=10, stale-while-revalidate=100')
+
   const episodes = await axios.get<ResponseType<EpisodeType>>(`${process.env.NEXT_PUBLIC_RAM_API}/episode`)
       .then(res => res.data.results)
 

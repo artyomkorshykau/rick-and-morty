@@ -7,6 +7,7 @@ import s from './locations.module.scss'
 import {getLayout} from "@/components/Layout/Base/base-layout";
 import {PageWrapper} from "@/components/PageWrapper/page-wrapper";
 import {LocationCard} from "@/components/LoactionCard/location-card";
+import {GetStaticProps} from "next";
 
 
 const getLocations = () => {
@@ -14,7 +15,7 @@ const getLocations = () => {
       .then(res => res.json())
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
 
   const queryClient = new QueryClient()
 

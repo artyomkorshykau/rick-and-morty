@@ -8,9 +8,10 @@
   margin: 15px;
 
   &:hover {
-    transition: .3s;
+    transition: .1s;
     cursor: pointer;
-    border-bottom: 5px solid var(--hover);
+
+    box-shadow: 0 6px 0 0 var(--hover);
 
     animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
@@ -45,7 +46,7 @@
     transform: translate(0);
   }
   100% {
-    transform: translateY(6px);
+    transform: translateY(-6px);
   }
 }
 

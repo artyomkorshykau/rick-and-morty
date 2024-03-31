@@ -1,11 +1,15 @@
-import {CharacterCard} from "@/components/CharacterCard/characterCard";
 import Link from "next/link";
 import s from './characters.module.scss'
 import {getLayout} from "@/components/Layout/Base/base-layout";
 import {PageWrapper} from "@/components/PageWrapper/page-wrapper";
 import usePagination from "@/pages/characters/hook/usePagination";
+import dynamic from "next/dynamic";
+
+const CharacterCard = dynamic(() => import('@/components/CharacterCard/characterCard')
+    .then(module => module.CharacterCard))
 
 // export const getStaticProps = async () => {
+//
 //   const characters = await axios.get<ResponseType<CharacterType>>(`${process.env.NEXT_PUBLIC_RAM_API}/character`)
 //       .then(res => res.data.results)
 //
@@ -18,7 +22,8 @@ import usePagination from "@/pages/characters/hook/usePagination";
 //   return {
 //     props: {
 //       characters
-//     }
+//     },
+//     revalidate: 30 //Revalidate data before 30sec
 //   }
 // }
 //
@@ -26,7 +31,7 @@ import usePagination from "@/pages/characters/hook/usePagination";
 //   characters: CharacterType[]
 // }
 
-function Characters() {
+const Characters = () => {
 
   const items = usePagination()
 
@@ -42,7 +47,7 @@ function Characters() {
         </div>
       </PageWrapper>
   );
-}
+};
 
 Characters.getLayout = getLayout
 export default Characters
