@@ -1,14 +1,14 @@
-import Link from "next/link";
-import styles from './navbar.module.scss'
+import s from './navbar.module.scss'
+import {Links} from "@/components/Navbar/Links/links";
+import {Logo} from "@/components/Navbar/Logo/logo";
+
 
 export default function Navbar() {
 
   return (
-      <div  className={styles.navbar}>
-        <Link href={'/'}>Main</Link>
-        <Link href={'/characters'}>Characters</Link>
-        <Link href={'/episodes'}>Episodes</Link>
-        <Link href={'/locations'}>Locations</Link>
+      <div className={s.navbar}>
+        <Logo/>
+        <Links/>
       </div>
   );
 }

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import s from './character.module.scss'
 import {CharacterType} from "@/assets/types/character";
-import {Status} from "../Status/status";
+import {Status} from "@/components/CharacterCard/Status/status";
 
 
 type Props = {

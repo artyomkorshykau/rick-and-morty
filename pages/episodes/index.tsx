@@ -1,8 +1,7 @@
-import HeadMeta from "@/components/HeadMeta/head";
 import axios from "axios";
 import {EpisodeType} from "@/assets/types/episode";
 import {ResponseType} from "@/assets/types/response";
-import {Card} from "@/components/Card/card";
+import {EpisodeCard} from "@/components/EpisodeCard/episode-card";
 import s from './episode.module.scss'
 import {getLayout} from "@/components/Layout/Base/base-layout";
 import {PageWrapper} from "@/components/PageWrapper/page-wrapper";
@@ -33,14 +32,10 @@ function Episodes({episodes}: Props) {
 
   return (
       <PageWrapper title={'Episodes | Rick & Morty'}>
-        <div>
-          <ol className={s.episodeList}>
-            {episodes && episodes.map((el) =>
-                <li key={el.id}>
-                  <Card title={el.name}/>
-                </li>
-            )}
-          </ol>
+        <div className={s.episodeList}>
+          {episodes && episodes.map((el) =>
+              <EpisodeCard episode={el} key={el.id}/>
+          )}
         </div>
       </PageWrapper>
   );

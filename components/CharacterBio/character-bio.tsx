@@ -1,7 +1,7 @@
-import {Status} from "@/components/Status/status";
 import Image from "next/image";
 import {CharacterType} from "@/assets/types/character";
 import s from './character-bio.module.scss'
+import {Status} from "@/components/CharacterCard/Status/status";
 
 
 type Props = {

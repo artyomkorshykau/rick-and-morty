@@ -2,15 +2,15 @@
   display: flex;
   width: 600px;
   height: 220px;
-  background: #e4d4e5;
+  background: var(--secondary);
   border-radius: 0.5rem;
   overflow: hidden;
   margin: 15px;
-  box-shadow: rgb(68, 68, 68) 0 4px 6px -1px, rgb(63, 63, 63) 0 2px 4px -1px;
 
   &:hover {
     transition: .3s;
     cursor: pointer;
+    border-bottom: 5px solid var(--hover);
 
     animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
@@ -20,7 +20,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 13.5px;
-    color: #2f273a;
+    color: var(--primary);
 
     .section {
       display: flex;
@@ -28,7 +28,7 @@
       align-items: flex-start;
 
       .text {
-        color: dimgray;
+        color: var(--secondary-text);
         font-size: 1rem;
       }
 

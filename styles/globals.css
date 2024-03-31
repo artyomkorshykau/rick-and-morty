@@ -14,7 +14,7 @@ body {
 }
 
 body {
-  background: #2f273a;
+  background: var(--primary);
 }
 
 a {

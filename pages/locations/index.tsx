@@ -2,10 +2,11 @@ import HeadMeta from "@/components/HeadMeta/head";
 import {ResponseType} from "@/assets/types/response";
 import {LocationType} from "@/assets/types/location";
 import {dehydrate, QueryClient, useQuery} from "@tanstack/react-query";
-import {Card} from "@/components/Card/card";
+import {EpisodeCard} from "@/components/EpisodeCard/episode-card";
 import s from './locations.module.scss'
 import {getLayout} from "@/components/Layout/Base/base-layout";
 import {PageWrapper} from "@/components/PageWrapper/page-wrapper";
+import {LocationCard} from "@/components/LoactionCard/location-card";
 
 
 const getLocations = () => {
@@ -43,9 +44,7 @@ function Locations() {
         <div>
           <ol className={s.locationList}>
             {locations && locations.results.map(el => (
-                    <li key={el.id}>
-                      <Card title={el.name}/>
-                    </li>
+                    <LocationCard location={el} key={el.id}/>
                 )
             )}
           </ol>
