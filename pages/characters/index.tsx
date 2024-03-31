@@ -7,7 +7,6 @@ import dynamic from "next/dynamic";
 
 const CharacterCard = dynamic(() => import('@/components/CharacterCard/characterCard')
     .then(module => module.CharacterCard))
-
 // export const getStaticProps = async () => {
 //
 //   const characters = await axios.get<ResponseType<CharacterType>>(`${process.env.NEXT_PUBLIC_RAM_API}/character`)
