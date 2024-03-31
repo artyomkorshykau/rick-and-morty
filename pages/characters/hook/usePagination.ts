@@ -2,6 +2,9 @@ import {useEffect, useState} from "react";
 import {CharacterType} from "@/assets/types/character";
 import axios from "axios";
 import {ResponseType} from "@/assets/types/response";
+import {API} from "@/assets/api/api";
+import {rickAndMortyApi} from "@/assets/api/rick-and-morty-api";
+
 
 const usePagination = () => {
   const [page, setPage] = useState<number>(0)
@@ -11,11 +14,11 @@ const usePagination = () => {
 
   useEffect(() => {
     if (fetching) {
-      axios.get<ResponseType<CharacterType>>(`${process.env.NEXT_PUBLIC_RAM_API}/character/?page=${page}`)
+      rickAndMortyApi.getCharacters({page})
           .then(res => {
-                setItems([...items, ...res.data.results])
+                setItems([...items, ...res.results])
                 setPage(prevState => prevState + 1)
-                setTotalItems(res.data.info.count)
+                setTotalItems(res.info.count)
               }
           )
           .finally(() => {

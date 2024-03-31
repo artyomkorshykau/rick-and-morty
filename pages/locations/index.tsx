@@ -1,18 +1,16 @@
-import HeadMeta from "@/components/HeadMeta/head";
 import {ResponseType} from "@/assets/types/response";
 import {LocationType} from "@/assets/types/location";
 import {dehydrate, QueryClient, useQuery} from "@tanstack/react-query";
-import {EpisodeCard} from "@/components/EpisodeCard/episode-card";
 import s from './locations.module.scss'
 import {getLayout} from "@/components/Layout/Base/base-layout";
 import {PageWrapper} from "@/components/PageWrapper/page-wrapper";
 import {LocationCard} from "@/components/LoactionCard/location-card";
 import {GetStaticProps} from "next";
+import {rickAndMortyApi} from "@/assets/api/rick-and-morty-api";
 
 
 const getLocations = () => {
-  return fetch(`${process.env.NEXT_PUBLIC_RAM_API}/location`, {method: 'GET'})
-      .then(res => res.json())
+  return rickAndMortyApi.getLocations()
 }
 
 export const getStaticProps: GetStaticProps = async () => {
