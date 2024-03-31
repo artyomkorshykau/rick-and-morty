@@ -9,7 +9,7 @@ export const rickAndMortyApi = {
 
   getCharacters(params?: ParamsType) {
     return instance
-        .get<ResponseType<CharacterType>>(`/character/?page=${params}`)
+        .get<ResponseType<CharacterType>>(`/character/?page=${params && 1}`)
         .then((res) => res.data);
   },
   getCharacter(id: string) {
