@@ -3,8 +3,7 @@ import {CharacterType} from "@/assets/types/character";
 import axios from "axios";
 import {ResponseType} from "@/assets/types/response";
 
-
-export const usePagination = () => {
+const usePagination = () => {
   const [page, setPage] = useState<number>(0)
   const [items, setItems] = useState<CharacterType[]>([])
   const [totalItems, setTotalItems] = useState<number>(0)
@@ -42,3 +41,5 @@ export const usePagination = () => {
 
   return items
 }
+
+export default usePagination

@@ -3,7 +3,7 @@ import Link from "next/link";
 import s from './characters.module.scss'
 import {getLayout} from "@/components/Layout/Base/base-layout";
 import {PageWrapper} from "@/components/PageWrapper/page-wrapper";
-import {usePagination} from "@/pages/characters/hook/usePagination";
+import usePagination from "@/pages/characters/hook/usePagination";
 
 // export const getStaticProps = async () => {
 //   const characters = await axios.get<ResponseType<CharacterType>>(`${process.env.NEXT_PUBLIC_RAM_API}/character`)
