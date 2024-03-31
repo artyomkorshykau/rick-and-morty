@@ -1,8 +1,5 @@
 import {useEffect, useState} from "react";
 import {CharacterType} from "@/assets/types/character";
-import axios from "axios";
-import {ResponseType} from "@/assets/types/response";
-import {API} from "@/assets/api/api";
 import {rickAndMortyApi} from "@/assets/api/rick-and-morty-api";
 
 

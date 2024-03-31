@@ -5,8 +5,8 @@ import s from './episode.module.scss'
 import {getLayout} from "@/components/Layout/Base/base-layout";
 import {PageWrapper} from "@/components/PageWrapper/page-wrapper";
 import {GetServerSideProps} from "next";
-import {API} from "@/assets/api/api";
 import {rickAndMortyApi} from "@/assets/api/rick-and-morty-api";
+
 
 export const getServerSideProps: GetServerSideProps = async ({res}) => {
 
