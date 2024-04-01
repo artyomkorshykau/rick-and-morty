@@ -8,9 +8,11 @@ import s from './status.module.scss'
 
 type Props = {
   status: CharacterStatus
+  className?: string
+  size: number
 }
 
-export const Status = ({status}: Props) => {
+export const Status = ({status, className, size}: Props) => {
   const statusImage = {
     Alive: aliveCircle,
     Dead: deadCircle,
@@ -19,8 +21,8 @@ export const Status = ({status}: Props) => {
   return <Image
       src={statusImage[status]}
       alt={'Alive'}
-      width={12}
-      height={12}
-      className={s.circle}
+      width={size}
+      height={size}
+      className={className}
   />
 }

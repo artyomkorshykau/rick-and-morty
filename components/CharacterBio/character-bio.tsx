@@ -1,7 +1,7 @@
 import Image from "next/image";
 import {CharacterType} from "@/assets/types/character";
 import s from './character-bio.module.scss'
-import {Status} from "@/components/CharacterCard/Status/status";
+import {Status} from "@/components/Status/status";
 
 
 type Props = {
@@ -17,14 +17,14 @@ export const CharacterBio = ({character}: Props) => {
 
         <Image src={image}
                alt={`Picture of ${name}`}
-               width={550}
-               height={450}/>
+               width={350}
+               height={320}/>
 
         <div className={s.info}>
           <div className={s.section}>
             <h3>{name}</h3>
             <span>
-              <Status status={character.status}/>
+              <Status status={character.status} className={s.status} size={15}/>
               {`${status} - ${species}`}
             </span>
           </div>

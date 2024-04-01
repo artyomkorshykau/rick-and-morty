@@ -1,7 +1,7 @@
 import Image from "next/image";
 import s from './character.module.scss'
 import {CharacterType} from "@/assets/types/character";
-import {Status} from "@/components/CharacterCard/Status/status";
+import {Status} from "@/components/Status/status";
 
 
 type Props = {
@@ -23,7 +23,7 @@ export const CharacterCard = ({character}: Props) => {
           <div className={s.section}>
             <h3>{name}</h3>
             <span>
-              <Status status={character.status}/>
+              <Status status={character.status} className={s.status} size={12}/>
               {`${status} - ${species}`}
             </span>
           </div>

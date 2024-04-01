@@ -1,7 +1,7 @@
 .card {
   display: flex;
-  width: 1200px;
-  height: 440px;
+  width: 60rem;
+  height: 20rem;
   background: var(--secondary);
   border-radius: 0.5rem;
   overflow: hidden;
@@ -24,6 +24,12 @@
       flex-direction: column;
       align-items: flex-start;
       font-size: 1.6rem;
+
+      .status {
+        position: relative;
+        top: -3px;
+        left: -3px;
+      }
 
       .text {
         color: var(--secondary-text);
