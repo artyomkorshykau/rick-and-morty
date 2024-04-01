@@ -3,7 +3,6 @@ import aliveCircle from "@/public/images/aliveCircle.png";
 import deadCircle from "@/public/images/deadCircle.png";
 import unknownCircle from "@/public/images/unknownCircle.png";
 import {CharacterStatus} from "@/assets/types/character";
-import s from './status.module.scss'
 
 
 type Props = {
