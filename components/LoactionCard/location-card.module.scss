@@ -12,7 +12,7 @@
   align-items: flex-start;
 
   &:hover {
-    transition: .3s;
+    transition: .1s;
     color: var(--hover);
     cursor: pointer;
 
@@ -78,6 +78,6 @@
     transform: translate(0);
   }
   100% {
-    transform: translateX(3px);
+    transform: translateX(6px);
   }
 }
