@@ -19,8 +19,8 @@ export const Status = ({status}: Props) => {
   return <Image
       src={statusImage[status]}
       alt={'Alive'}
-      width={20}
-      height={20}
+      width={12}
+      height={12}
       className={s.circle}
   />
 }

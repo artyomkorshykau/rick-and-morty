@@ -1,17 +1,17 @@
 .card {
   display: flex;
-  width: 600px;
-  height: 220px;
+  width: 25rem;
+  height: 10rem;
   background: var(--secondary);
   border-radius: 0.5rem;
   overflow: hidden;
-  margin: 15px;
+  margin: 0.5rem;
 
   &:hover {
     transition: .1s;
     cursor: pointer;
 
-    box-shadow: 0 6px 0 0 var(--hover);
+    box-shadow: 0 0.2rem 0 0 var(--hover);
 
     animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
@@ -20,21 +20,28 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 13.5px;
+    padding: 0.3rem;
     color: var(--primary);
+    width: 100%;
 
     .section {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
 
+      & > h3 {
+        text-align: left;
+        font-size: 1.1rem;
+      }
+
       .text {
         color: var(--secondary-text);
-        font-size: 1rem;
+        font-size: 0.7rem;
       }
 
       & > span {
         text-align: left;
+        font-size: 0.9rem;
       }
     }
   }

@@ -16,8 +16,8 @@ export const CharacterCard = ({character}: Props) => {
       <div className={s.card}>
         <Image src={character.image}
                alt={`Picture of ${character.name}`}
-               width={230}
-               height={220}/>
+               width={170}
+               height={176}/>
 
         <div className={s.info}>
           <div className={s.section}>
