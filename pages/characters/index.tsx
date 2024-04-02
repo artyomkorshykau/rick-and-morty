@@ -2,11 +2,13 @@ import Link from "next/link";
 import s from './characters.module.scss'
 import {getLayout} from "@/components/Layout/Base/base-layout";
 import {PageWrapper} from "@/components/PageWrapper/page-wrapper";
-import usePagination from "@/pages/characters/hook/usePagination";
 import dynamic from "next/dynamic";
+import usePagination from "@/assets/hooks/usePagination";
+
 
 const CharacterCard = dynamic(() => import('@/components/CharacterCard/characterCard')
     .then(module => module.CharacterCard))
+
 // export const getStaticProps = async () => {
 //
 //   const characters = await axios.get<ResponseType<CharacterType>>(`${process.env.NEXT_PUBLIC_RAM_API}/character`)
@@ -32,12 +34,12 @@ const CharacterCard = dynamic(() => import('@/components/CharacterCard/character
 
 const Characters = () => {
 
-  const items = usePagination()
+  const {charactersItems} = usePagination({characters: true})
 
   return (
       <PageWrapper title={'Characters | Rick & Morty'}>
         <div className={s.charactersPage}>
-          {items && items.map(el => (
+          {charactersItems && charactersItems.map(el => (
               <Link href={`/characters/${el.id}`} key={el.id}>
                 <CharacterCard character={el}
                 />

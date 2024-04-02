@@ -9,7 +9,7 @@ export const rickAndMortyApi = {
 
   getCharacters(params?: ParamsType) {
     return instance
-        .get<ResponseType<CharacterType>>(`/character/?page=${params ? params : 1}`)
+        .get<ResponseType<CharacterType>>(`/character/?page=${params?.page ? params.page : 1}`)
         .then((res) => res.data);
   },
   getCharacter(id: string) {
@@ -20,7 +20,7 @@ export const rickAndMortyApi = {
 
   getLocations(params?: ParamsType) {
     return instance
-        .get<ResponseType<LocationType>>("/location", {params})
+        .get<ResponseType<LocationType>>(`/location/?page=${params?.page ? params.page : 1}`)
         .then((res) => res.data);
   },
   getLocation(id: string) {
@@ -31,7 +31,7 @@ export const rickAndMortyApi = {
 
   getEpisodes(params?: ParamsType) {
     return instance
-        .get<ResponseType<EpisodeType>>("/episode", {params})
+        .get<ResponseType<EpisodeType>>(`/episode/?page=${params?.page ? params.page : 1}`)
         .then((res) => res.data);
   },
   getEpisode(id: string) {
