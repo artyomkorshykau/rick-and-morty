@@ -1,11 +1,7 @@
-import {EpisodeType} from "@/assets/types/episode";
-import {ResponseType} from "@/assets/types/response";
 import {EpisodeCard} from "@/components/EpisodeCard/episode-card";
 import s from './episode.module.scss'
 import {getLayout} from "@/components/Layout/Base/base-layout";
 import {PageWrapper} from "@/components/PageWrapper/page-wrapper";
-import {GetServerSideProps} from "next";
-import {rickAndMortyApi} from "@/assets/api/rick-and-morty-api";
 import usePagination from "@/assets/hooks/usePagination";
 
 
