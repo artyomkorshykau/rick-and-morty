@@ -1,21 +1,19 @@
 .charactersPage {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  margin: 1.3rem 0 1.3rem 0;
+  justify-content: center;
+
+  margin: 1.3rem 0;
 }
 
 .characterPage {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center;
   align-items: center;
-  margin: 1.3rem 0 1.3rem 0;
+  justify-content: center;
+
   height: 78vh;
+  margin: 1.3rem 0;
 }
-
-
-
-

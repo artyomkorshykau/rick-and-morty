@@ -1,39 +1,39 @@
-import s from './characters.module.scss'
-import {CharacterType} from "@/assets/types/character";
-import {getLayout} from "@/components/Layout/Base/base-layout";
-import {GetStaticPaths, GetStaticProps} from "next";
-import {useRouter} from "next/router";
-import {PageWrapper} from "@/components/PageWrapper/page-wrapper";
-import {BackButton} from "@/components/BackButton/back-button";
-import {CharacterBio} from "@/components/CharacterBio/character-bio";
-import {rickAndMortyApi} from "@/assets/api/rick-and-morty-api";
+import { rickAndMortyApi } from '@/assets/api/rick-and-morty-api'
+import { CharacterType } from '@/assets/types/character'
+import { BackButton } from '@/components/BackButton/back-button'
+import { CharacterBio } from '@/components/CharacterBio/character-bio'
+import { getLayout } from '@/components/Layout/Base/base-layout'
+import { PageWrapper } from '@/components/PageWrapper/page-wrapper'
+import { GetStaticPaths, GetStaticProps } from 'next'
+import { useRouter } from 'next/router'
 
+import s from './characters.module.scss'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const {results} = await rickAndMortyApi.getCharacters()
+  const { results } = await rickAndMortyApi.getCharacters()
 
-  const paths = results.map(el => ({params: {id: String(el.id)}}))
+  const paths = results.map(el => ({ params: { id: String(el.id) } }))
 
   return {
+    fallback: true,
     paths,
-    fallback: true
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({params}) => {
-  const {id} = params || {}
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const { id } = params || {}
   const character = await rickAndMortyApi.getCharacter(id as string)
 
   if (!character) {
     return {
-      notFound: true
+      notFound: true,
     }
   }
 
   return {
     props: {
-      character
-    }
+      character,
+    },
   }
 }
 
@@ -41,21 +41,21 @@ type Props = {
   character: CharacterType
 }
 
-function Character({character}: Props) {
-
+function Character({ character }: Props) {
   const router = useRouter()
 
-  if (router.isFallback) return <h1>Loading...</h1>
+  if (router.isFallback) {
+    return <h1>Loading...</h1>
+  }
 
   return (
-      <PageWrapper title={`${character.name} | Rick & Morty`}>
-        <div className={s.characterPage}>
-          <BackButton router={router}/>
-          <CharacterBio character={character}/>
-        </div>
-      </PageWrapper>
-
-  );
+    <PageWrapper title={`${character.name} | Rick & Morty`}>
+      <div className={s.characterPage}>
+        <BackButton router={router} />
+        <CharacterBio character={character} />
+      </div>
+    </PageWrapper>
+  )
 }
 
 Character.getLayout = getLayout

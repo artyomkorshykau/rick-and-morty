@@ -1,27 +1,29 @@
-import Image from "next/image";
-import aliveCircle from "@/public/images/aliveCircle.png";
-import deadCircle from "@/public/images/deadCircle.png";
-import unknownCircle from "@/public/images/unknownCircle.png";
-import {CharacterStatus} from "@/assets/types/character";
-
+import { CharacterStatus } from '@/assets/types/character'
+import aliveCircle from '@/public/images/aliveCircle.png'
+import deadCircle from '@/public/images/deadCircle.png'
+import unknownCircle from '@/public/images/unknownCircle.png'
+import Image from 'next/image'
 
 type Props = {
-  status: CharacterStatus
   className?: string
   size: number
+  status: CharacterStatus
 }
 
-export const Status = ({status, className, size}: Props) => {
+export const Status = ({ className, size, status }: Props) => {
   const statusImage = {
     Alive: aliveCircle,
     Dead: deadCircle,
-    unknown: unknownCircle
+    unknown: unknownCircle,
   }
-  return <Image
-      src={statusImage[status]}
+
+  return (
+    <Image
       alt={'Alive'}
-      width={size}
-      height={size}
       className={className}
-  />
+      height={size}
+      src={statusImage[status]}
+      width={size}
+    />
+  )
 }

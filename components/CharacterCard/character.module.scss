@@ -1,28 +1,30 @@
 .card {
+  overflow: hidden;
   display: flex;
+
   width: 25rem;
   height: 10rem;
-  background: var(--secondary);
-  border-radius: 0.5rem;
-  overflow: hidden;
   margin: 0.5rem;
 
+  background: var(--secondary);
+  border-radius: 0.5rem;
+
   &:hover {
-    transition: .1s;
     cursor: pointer;
-
     box-shadow: 0 0.2rem 0 0 var(--hover);
-
-    animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    transition: 0.1s;
+    animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
 
   .info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0.3rem;
-    color: var(--primary);
+
     width: 100%;
+    padding: 0.3rem;
+
+    color: var(--primary);
 
     .section {
       display: flex;
@@ -36,30 +38,29 @@
       }
 
       & > h3 {
-        text-align: left;
         font-size: 1.1rem;
+        text-align: left;
       }
 
       .text {
-        color: var(--secondary-text);
         font-size: 0.7rem;
+        color: var(--secondary-text);
       }
 
       & > span {
-        text-align: left;
         font-size: 0.9rem;
+        text-align: left;
       }
     }
   }
 }
 
-
 @keyframes slide-top {
   0% {
     transform: translate(0);
   }
+
   100% {
     transform: translateY(-6px);
   }
 }
-

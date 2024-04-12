@@ -1,9 +1,10 @@
-import {EpisodeCard} from "@/components/EpisodeCard/episode-card";
-import s from './episode.module.scss'
-import {getLayout} from "@/components/Layout/Base/base-layout";
-import {PageWrapper} from "@/components/PageWrapper/page-wrapper";
-import usePagination from "@/assets/hooks/usePagination";
+import usePagination from '@/assets/hooks/usePagination'
+import { useTranslation } from '@/common/hooks/useTranslation'
+import { EpisodeCard } from '@/components/EpisodeCard/episode-card'
+import { getLayout } from '@/components/Layout/Base/base-layout'
+import { PageWrapper } from '@/components/PageWrapper/page-wrapper'
 
+import s from './episode.module.scss'
 
 // export const getServerSideProps: GetServerSideProps = async ({res}) => {
 //
@@ -30,18 +31,16 @@ import usePagination from "@/assets/hooks/usePagination";
 // }
 
 function Episodes() {
-
-  const {episodesItems} = usePagination({episodes: true})
+  const { episodesItems } = usePagination({ episodes: true })
+  const { t } = useTranslation()
 
   return (
-      <PageWrapper title={'Episodes | Rick & Morty'}>
-        <div className={s.episodeList}>
-          {episodesItems && episodesItems.map((el) =>
-              <EpisodeCard episode={el} key={el.id}/>
-          )}
-        </div>
-      </PageWrapper>
-  );
+    <PageWrapper title={`${t.episodesPage.title} | Rick & Morty`}>
+      <div className={s.episodeList}>
+        {episodesItems && episodesItems.map(el => <EpisodeCard episode={el} key={el.id} />)}
+      </div>
+    </PageWrapper>
+  )
 }
 
 Episodes.getLayout = getLayout

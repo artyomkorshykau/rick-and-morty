@@ -1,34 +1,34 @@
 export type CharactersInfo = {
-  count: number;
-  pages: number;
-  next: string;
-  prev?: any;
+  count: number
+  next: string
+  pages: number
+  prev?: any
 }
 
 export type CharactersOrigin = {
-  name: string;
-  url: string;
+  name: string
+  url: string
 }
 export type CharactersLocation = {
-  name: string;
-  url: string;
+  name: string
+  url: string
 }
 
-export type CharacterStatus = "Alive" | "Dead" | "unknown";
+export type CharacterStatus = 'Alive' | 'Dead' | 'unknown'
 
-export type CharacterSex = "female" | "male" | "genderless" | "unknown";
+export type CharacterSex = 'female' | 'genderless' | 'male' | 'unknown'
 
 export type CharacterType = {
-  id: number;
-  name: string;
-  status: CharacterStatus;
-  species: string;
-  type: string;
+  created: string
+  episode: string[]
   gender: CharacterSex
-  origin: CharactersOrigin;
-  location: CharactersLocation;
-  image: string;
-  episode: string[];
-  url: string;
-  created: string;
+  id: number
+  image: string
+  location: CharactersLocation
+  name: string
+  origin: CharactersOrigin
+  species: string
+  status: CharacterStatus
+  type: string
+  url: string
 }

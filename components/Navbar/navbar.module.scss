@@ -3,5 +3,24 @@
   justify-content: space-between;
   margin: 1rem 0 3rem;
 
-}
+  .langSwitch {
+    position: absolute;
+    left: 30rem;
 
+    display: flex;
+    gap: 0.7rem;
+
+    height: 100%;
+    padding-top: 5px;
+
+    .ruActive {
+      color: #67ff21ff;
+      text-shadow: 0 0 5px #67ff21ff;
+    }
+
+    .enActive {
+      color: var(--hover);
+      text-shadow: 0 0 5px var(--hover);
+    }
+  }
+}

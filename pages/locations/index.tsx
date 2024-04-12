@@ -1,9 +1,10 @@
-import s from './locations.module.scss'
-import {getLayout} from "@/components/Layout/Base/base-layout";
-import {PageWrapper} from "@/components/PageWrapper/page-wrapper";
-import {LocationCard} from "@/components/LoactionCard/location-card";
-import usePagination from "@/assets/hooks/usePagination";
+import usePagination from '@/assets/hooks/usePagination'
+import { useTranslation } from '@/common/hooks/useTranslation'
+import { getLayout } from '@/components/Layout/Base/base-layout'
+import { LocationCard } from '@/components/LoactionCard/location-card'
+import { PageWrapper } from '@/components/PageWrapper/page-wrapper'
 
+import s from './locations.module.scss'
 
 // const getLocations = () => {
 //   return rickAndMortyApi.getLocations()
@@ -26,28 +27,25 @@ import usePagination from "@/assets/hooks/usePagination";
 //   }
 // }
 
-
 function Locations() {
-
-  const {locationsItems} = usePagination({locations: true})
+  const { locationsItems } = usePagination({ locations: true })
 
   // const {data: locations} = useQuery<ResponseType<LocationType>>({
   //   queryFn: getLocations,
   //   queryKey: ['location']
   // })
 
+  const { t } = useTranslation()
+
   return (
-      <PageWrapper title={'Locations | Rick & Morty'}>
-        <div>
-          <ol className={s.locationList}>
-            {locationsItems && locationsItems.map(el => (
-                    <LocationCard location={el} key={el.id}/>
-                )
-            )}
-          </ol>
-        </div>
-      </PageWrapper>
-  );
+    <PageWrapper title={`${t.locationsPage.title} | Rick & Morty`}>
+      <div>
+        <ol className={s.locationList}>
+          {locationsItems && locationsItems.map(el => <LocationCard key={el.id} location={el} />)}
+        </ol>
+      </div>
+    </PageWrapper>
+  )
 }
 
 Locations.getLayout = getLayout

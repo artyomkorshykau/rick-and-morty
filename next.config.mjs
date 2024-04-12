@@ -1,16 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'ru'],
+  },
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
         hostname: 'rickandmortyapi.com',
+        pathname: '/api/character/avatar/**',
         port: '',
-        pathname: '/api/character/avatar/**'
+        protocol: 'https'
       }
     ]
-  }
+  },
+  reactStrictMode: true
 };
 
 export default nextConfig;

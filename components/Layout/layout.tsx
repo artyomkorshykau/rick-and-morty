@@ -1,13 +1,13 @@
-import {NextPage} from "next";
-import {PropsWithChildren} from "react";
-import Navbar from "@/components/Navbar/navbar";
+import { PropsWithChildren } from 'react'
 
+import Navbar from '@/components/Navbar/navbar'
+import { NextPage } from 'next'
 
-export const Layout: NextPage<PropsWithChildren> = ({children}) => {
+export const Layout: NextPage<PropsWithChildren> = ({ children }) => {
   return (
-      <main>
-        <Navbar/>
-        {children}
-      </main>
+    <main>
+      <Navbar />
+      {children}
+    </main>
   )
 }

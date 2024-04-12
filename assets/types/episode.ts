@@ -1,9 +1,9 @@
 export type EpisodeType = {
-  "id": number,
-  "name": string,
-  "air_date": string,
-  "episode": string,
-  "characters": string[]
-  "url": string
-  "created": string
+  air_date: string
+  characters: string[]
+  created: string
+  episode: string
+  id: number
+  name: string
+  url: string
 }

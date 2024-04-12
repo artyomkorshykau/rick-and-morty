@@ -1,9 +1,9 @@
 export type LocationType = {
-	id: number;
-	name: string;
-	type: string;
-	dimension: string;
-	residents: string[];
-	url: string;
-	created: string;
+  created: string
+  dimension: string
+  id: number
+  name: string
+  residents: string[]
+  type: string
+  url: string
 }

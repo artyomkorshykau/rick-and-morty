@@ -1,13 +1,15 @@
-import Link from "next/link";
+import usePagination from '@/assets/hooks/usePagination'
+import { useTranslation } from '@/common/hooks/useTranslation'
+import { getLayout } from '@/components/Layout/Base/base-layout'
+import { PageWrapper } from '@/components/PageWrapper/page-wrapper'
+import dynamic from 'next/dynamic'
+import Link from 'next/link'
+
 import s from './characters.module.scss'
-import {getLayout} from "@/components/Layout/Base/base-layout";
-import {PageWrapper} from "@/components/PageWrapper/page-wrapper";
-import dynamic from "next/dynamic";
-import usePagination from "@/assets/hooks/usePagination";
 
-
-const CharacterCard = dynamic(() => import('@/components/CharacterCard/characterCard')
-    .then(module => module.CharacterCard))
+const CharacterCard = dynamic(() =>
+  import('@/components/CharacterCard/characterCard').then(module => module.CharacterCard)
+)
 
 // export const getStaticProps = async () => {
 //
@@ -33,22 +35,22 @@ const CharacterCard = dynamic(() => import('@/components/CharacterCard/character
 // }
 
 const Characters = () => {
-
-  const {charactersItems} = usePagination({characters: true})
+  const { charactersItems } = usePagination({ characters: true })
+  const { t } = useTranslation()
 
   return (
-      <PageWrapper title={'Characters | Rick & Morty'}>
-        <div className={s.charactersPage}>
-          {charactersItems && charactersItems.map(el => (
-              <Link href={`/characters/${el.id}`} key={el.id}>
-                <CharacterCard character={el}
-                />
-              </Link>
+    <PageWrapper title={`${t.charactersPage.title} | Rick & Morty`}>
+      <div className={s.charactersPage}>
+        {charactersItems &&
+          charactersItems.map(el => (
+            <Link href={`/characters/${el.id}`} key={el.id}>
+              <CharacterCard character={el} />
+            </Link>
           ))}
-        </div>
-      </PageWrapper>
-  );
-};
+      </div>
+    </PageWrapper>
+  )
+}
 
 Characters.getLayout = getLayout
 export default Characters

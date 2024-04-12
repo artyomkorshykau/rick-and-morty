@@ -12,7 +12,7 @@
     font-size: 1rem;
 
     &:hover {
-      color: var(--hover)
+      color: var(--hover);
     }
   }
 
@@ -23,9 +23,11 @@
     border-radius: 2px;
     background-color: var(--hover);
     position: absolute;
-    bottom: -.25rem;
+    bottom: -0.25rem;
     left: 50%;
-    transition: width .4s, left .4s;
+    transition:
+      width 0.4s,
+      left 0.4s;
   }
 
   .link:hover::before {

@@ -1,16 +1,16 @@
-import HeadMeta from "@/components/HeadMeta/head";
-import {PropsWithChildren} from "react";
+import { PropsWithChildren } from 'react'
 
+import HeadMeta from '@/components/HeadMeta/head'
 
 type Props = {
   title?: string
 }
 
-export const PageWrapper = ({title, children}: PropsWithChildren<Props>) => {
+export const PageWrapper = ({ children, title }: PropsWithChildren<Props>) => {
   return (
-      <>
-        <HeadMeta title={title}/>
-        <>{children}</>
-      </>
+    <>
+      <HeadMeta title={title} />
+      <>{children}</>
+    </>
   )
 }
