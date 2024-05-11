@@ -21,19 +21,25 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { id } = params || {}
-  const character = await rickAndMortyApi.getCharacter(id as string)
+  try {
+    const { id } = params || {}
+    const character = await rickAndMortyApi.getCharacter(id as string)
 
-  if (!character) {
-    return {
-      notFound: true,
+    if (!character) {
+      return {
+        notFound: true,
+      }
     }
-  }
 
-  return {
-    props: {
-      character,
-    },
+    return {
+      props: {
+        character,
+      },
+    }
+  } catch {
+    return {
+      props: { character: null },
+    }
   }
 }
 
