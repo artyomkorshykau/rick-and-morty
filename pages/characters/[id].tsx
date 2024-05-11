@@ -15,7 +15,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = results.map(el => ({ params: { id: String(el.id) } }))
 
   return {
-    fallback: true,
+    fallback: false,
     paths,
   }
 }
